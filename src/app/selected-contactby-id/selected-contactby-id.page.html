@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Contact </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-app>
+    <ion-header translucent>
+        <ion-toolbar>
+            <ion-title>Card</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content fullscreen>
+        <ion-item>
+            <ion-button (click)="onreturn()">
+                <ion-icon name="return-down-back-sharp"></ion-icon>
+            </ion-button>
+        </ion-item>
+        <ion-card>
+            <img src="assets/libane.jpg" />
+            <ion-card-header>
+                <ion-card-subtitle>{{ contact.address }}</ion-card-subtitle>
+                <ion-card-title>{{ contact.name }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <p><strong>{{ contact.telephone }}</strong></p>
+                <p><strong>{{ contact.civility }}</strong></p>
+            </ion-card-content>
+        </ion-card>
+    </ion-content>
+</ion-app>

@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>etudiants</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <div *ngIf="student">
+        <ion-item>
+            <ion-label position="stacked">Student Name </ion-label>
+            <ion-input [(ngModel)]="student.nom" placeholder="Name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked">Class </ion-label>
+            <ion-input [(ngModel)]="student.class" placeholder="Student Class"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked">Obtained Marks</ion-label>
+            <ion-input [(ngModel)]="student.mark" placeholder="Mark"></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" (click)="updateStudentData()">Update Student</ion-button>
+    </div>
+</ion-content>

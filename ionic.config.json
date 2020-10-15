@@ -1,5 +1,7 @@
 {
   "name": "gestioncontactlaravelPlus",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

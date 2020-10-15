@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>etudiant</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="stacked">Student Name </ion-label>
+        <ion-input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="etudiant.nom" placeholder="Name "></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked ">Class </ion-label>
+        <ion-input type="text " [ngModelOptions]="{standalone: true} " [(ngModel)]="etudiant.class " name="class " placeholder="Class "></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked ">Obtained Marks</ion-label>
+        <ion-input type="text " [ngModelOptions]="{standalone: true} " [(ngModel)]="etudiant.mark " name="mark " placeholder="Mark "></ion-input>
+    </ion-item>
+
+    <ion-button expand="block " (click)="addEtudiant() ">Save</ion-button>
+    <ion-list>
+        <ion-item button *ngFor="let e of etudiants">
+            <ion-label>
+                <h2>Nom : {{ e.nom }}</h2>
+                <p>Class : {{ e.class }}</p>
+                <p>Marks : {{ e.mark }}</p>
+            </ion-label>
+            <ion-button color="primary" (click)="onedite(e.id)">
+                <ion-icon name="create-outline"></ion-icon>
+            </ion-button>
+            <ion-button color="danger" (click)="delete(e)">
+                <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+        </ion-item>
+    </ion-list>
+</ion-content>

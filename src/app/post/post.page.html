@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Post</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-virtual-scroll [items]="data" approxItemHeight="320px">
+        <ion-card *virtualItem="let d">
+            <img src="{{ d.picture }}" />
+            <ion-card-header>
+                <ion-card-subtitle>{{ d.title }}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+                <strong>
+                {{ d.message }}
+               </strong>
+            </ion-card-content>
+            <ion-item>
+                <ion-label></ion-label>
+                <ion-label></ion-label>
+                <ion-label></ion-label>
+                <ion-label>
+                    <ion-button color="danger" (click)="onLike(d)">
+                        <ion-icon name="heart-circle-outline"></ion-icon>
+                    </ion-button>
+                </ion-label>
+                <ion-label>
+                    <ion-button color="primary" (click)="addcomment()">
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                    </ion-button>
+                </ion-label>
+                <ion-label>
+                    <ion-button color="primary">
+                        <ion-icon name="share-social-outline"></ion-icon>
+                    </ion-button>
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    <ion-input type="text" placeholder="Veuillez Comment"></ion-input>
+                </ion-label>
+                <ion-label>
+                    <ion-button color="primary">
+                        <ion-icon name="send-outline"></ion-icon>
+                    </ion-button>
+                </ion-label>
+                <ion-label>
+                    <ion-input type="hidden" value="{{ d.id }}"></ion-input>
+                </ion-label>
+            </ion-item>
+        </ion-card>
+    </ion-virtual-scroll>
+</ion-content>
